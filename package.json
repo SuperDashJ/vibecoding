@@ -1,0 +1,14 @@
+{
+  "name": "is-this-worth-it",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Is This Worth It? price and value checker MVP",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
