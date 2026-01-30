@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Is This Worth It? — Price & Value Checker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-glow"></div>
+    <main class="app">
+      <header class="app__header">
+        <div>
+          <p class="eyebrow">Price & Value Checker</p>
+          <h1>Is This Worth It?</h1>
+          <p class="subtitle">
+            Brutally honest verdicts for sneakerheads. Manual input only.
+          </p>
+        </div>
+        <button class="ghost" id="shareButton" type="button">Share with friend</button>
+      </header>
+
+      <section class="cards">
+        <form class="card card--input" id="valueForm">
+          <h2>Enter Details</h2>
+          <label>
+            Model name
+            <input
+              id="modelInput"
+              list="modelOptions"
+              placeholder="Start typing brand or model"
+              required
+            />
+            <datalist id="modelOptions"></datalist>
+          </label>
+
+          <label>
+            Price
+            <div class="input-row">
+              <input
+                id="priceInput"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                placeholder="0.00"
+                required
+              />
+              <select id="currencySelect"></select>
+            </div>
+          </label>
+
+          <label>
+            Size (optional)
+            <input id="sizeInput" type="text" placeholder="US 9.5" />
+          </label>
+
+          <label>
+            Rep batch tier (optional)
+            <select id="batchSelect">
+              <option value="">Select a tier</option>
+              <option value="Budget">Budget</option>
+              <option value="Mid-Tier">Mid-Tier</option>
+              <option value="High-Tier">High-Tier</option>
+              <option value="Overhyped / Low Quality">Overhyped / Low Quality</option>
+            </select>
+          </label>
+
+          <button class="primary" type="submit">Check Value</button>
+          <p class="helper" id="formMessage"></p>
+        </form>
+
+        <section class="card card--output" aria-live="polite">
+          <h2>Verdict</h2>
+          <div class="verdict" id="verdictText">Enter a model to start.</div>
+          <div class="context" id="contextOutput"></div>
+        </section>
+      </section>
+
+      <section class="history">
+        <div class="history__header">
+          <h2>History</h2>
+          <button class="ghost" id="clearHistory" type="button">Clear all</button>
+        </div>
+        <div id="historyList" class="history__list"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
